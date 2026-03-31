@@ -1,153 +1,210 @@
 # ⚡ Orinex
 
-> AI-powered code editor for Windows, macOS, Linux, iPhone and Android — supporting Claude, OpenAI, Gemini, Mistral, Groq, Cohere, Together and Ollama
+> A modern AI-powered code editor for desktop and mobile, built for speed, privacy, and real-world workflows.
 
-![Orinex](https://img.shields.io/badge/version-1.0.0-6366f1?style=for-the-badge)
-![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
-![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux%20%7C%20iOS%20%7C%20Android-blue?style=for-the-badge)
-![Electron](https://img.shields.io/badge/Electron-28-47848F?style=for-the-badge&logo=electron)
+![Version](https://img.shields.io/badge/version-1.0.0-0ea5e9?style=for-the-badge)
+![License](https://img.shields.io/badge/license-MIT-22c55e?style=for-the-badge)
+![Platforms](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux%20%7C%20iOS%20%7C%20Android-1d4ed8?style=for-the-badge)
+![Electron](https://img.shields.io/badge/Electron-41-47848F?style=for-the-badge&logo=electron)
 
 Built by [Manohar Padul](https://manoharpadul.com)
 
-Orinex is an open source project, built by Manohar Padul with support from 4-5 AI assistants.
+Orinex is an open source project, crafted with support from multiple AI assistants.
 
 ---
 
-## ✨ Features
+## 🌟 Why Orinex?
 
-- 🤖 **Multi-AI Support** — Claude (Anthropic), GPT-4 (OpenAI), Gemini (Google), Mistral, Groq
-- 🎨 **6 Built-in Themes** — Dark, Light, Monokai, Dracula, Nord, Solarized + Custom theme builder
-- 🖥️ **Native Desktop App** — Windows (.exe), macOS (.dmg), Linux (.AppImage / .deb / .rpm)
-- 📱 **Mobile App Runtime** — iPhone and Android build path via Capacitor
-- 🌍 **Broad Language Modes on Mobile** — Monaco language catalog (many programming and markup languages)
-- 🐍 **Python on Mobile** — Run Python code directly on iPhone/Android using in-app Pyodide runtime
-- 📦 **Offline Python Runtime on Mobile** — Pyodide is bundled locally (no first-run internet dependency)
-- 📁 **File Explorer** — Open files and folders from your system
-- ⌨️ **VSCode-like Shortcuts** — Ctrl+S, Ctrl+O, Ctrl+K, Ctrl+,, and more
-- 🖱️ **OS Window Styles** — macOS traffic lights, Windows title bar, Linux minimal
-- 🔒 **Local & Secure** — Your API keys stored locally, never sent anywhere except the AI provider
-- 🌐 **Works Offline** — Editor works without internet; AI features need your API key
+- ⚡ **Fast, focused coding experience** with desktop power and mobile reach
+- 🤖 **Multiple AI providers in one editor** with local key storage
+- 🧩 **Modern workflow features** like session restore, tab restore, and resizable panels
+- 🐍 **Python on mobile** with offline-ready runtime bundling
 
 ---
 
-## 🆕 Recent Changes
+## ✨ Feature Highlights
 
-- Rebranded from DevAI to **Orinex** with updated icons and branding.
-- Removed startup loading splash for a faster direct launch.
-- Added startup homepage with session resume support.
-- Added session restore for last project, open tabs, and active file.
-- Added real-time resizable sidebar, terminal, and AI panel.
-- Improved built-in terminal flow (single-stream output with prompt continuity).
-- Added connection-gated AI panel visibility with provider checks.
-- Added mobile editor support for iPhone and Android via Capacitor.
-- Added mobile Python execution using Pyodide.
-- Added local Pyodide preloading so Python runtime works without first-run internet on iPhone/Android.
+- 🤖 **Multi-AI support**
+	Claude, OpenAI, Gemini, Mistral, Groq, Cohere, Together, and Ollama (local LLM).
+
+- 🖥️ **Desktop apps for all major platforms**
+	Native packaging for Windows, macOS, and Linux.
+
+- 📱 **iPhone and Android support**
+	Dedicated mobile client powered by Capacitor and Monaco.
+
+- 🐍 **Python execution on mobile**
+	Run Python directly in-app via Pyodide.
+
+- 📦 **Offline Python runtime on mobile**
+	Pyodide runtime is bundled locally, so first run does not require internet.
+
+- 🧠 **Session continuity**
+	Restore last project, open tabs, and active file.
+
+- 🧰 **Productivity-first editor UX**
+	Real-time panel resizing, integrated terminal, themes, and VS Code-style shortcuts.
 
 ---
 
-## 📦 Downloads
+## 🆕 Recent Upgrades
 
-### Pre-built Binaries
+- 🎨 Rebranded from DevAI to **Orinex** with new logo and app icons.
+- 🚀 Removed startup loading splash for faster launch.
+- 🏠 Added startup homepage with resume session support.
+- ♻️ Added session restore for project, tabs, and active file.
+- ↔️ Added real-time resizable sidebar, terminal, and AI panel.
+- 🧪 Improved terminal flow with cleaner prompt/output continuity.
+- 🔐 Added connection-gated AI panel visibility and provider checks.
+- 📲 Added mobile editor runtime for iPhone and Android.
+- 🐍 Added mobile Python execution using Pyodide.
+- 📦 Added local Pyodide preloading for offline Python startup.
+
+---
+
+## 📥 Downloads
+
+### Pre-built binaries
+
 | Platform | File | Architecture |
 |----------|------|-------------|
 | Windows | `Orinex-1.0.0-Windows-x64.exe` | x64 |
 | Windows (portable) | `Orinex-1.0.0-Windows-x64.exe` | x64 |
 | macOS | `Orinex-1.0.0-macOS-universal.dmg` | Intel + Apple Silicon |
+| Linux (portable) | `Orinex-1.0.0-Linux-x64.tar.gz` | x64 |
 | Linux | `Orinex-1.0.0-Linux-x64.AppImage` | x64 |
 | Linux | `Orinex-1.0.0-Linux-x64.deb` | x64 |
 | Linux | `Orinex-1.0.0-Linux-x64.rpm` | x64 |
 
-> Download from the [Releases](https://github.com/ManoharPadul/Orinex/releases) page.
+➡️ Download from [GitHub Releases](https://github.com/ManoharPadul/Orinex/releases).
 
 ---
 
-## 🚀 Getting Started (Build from Source)
+## 🚀 Quick Start (From Source)
 
-### Prerequisites
-- [Node.js](https://nodejs.org/) v18 or higher
-- npm v9 or higher
+### Requirements
+
+- [Node.js](https://nodejs.org/) v18+
+- npm v9+
 - Git
 
-### Installation
+### Run locally
 
 ```bash
-# Clone the repository
 git clone https://github.com/ManoharPadul/Orinex.git
 cd Orinex
-
-# Install dependencies
 npm install
-
-# Run in development mode
 npm start
 ```
 
-### Building
+---
+
+## 🏗️ Build Desktop Apps
 
 ```bash
-# Build for Windows
-npm run build:win
+# Windows x64 (local Windows build)
+npm run build:win:x64
 
-# Build for macOS (must be on macOS)
-npm run build:mac
+# Linux x64 (best on Linux or CI)
+npm run build:linux:x64
 
-# Build for Linux
-npm run build:linux
+# Linux portable artifact from Windows
+npm run build:linux:x64:portable
 
-# Build for all platforms
+# Build all desktop targets
 npm run build:all
 ```
 
-Built files will be in the `dist/` folder.
+Built files are generated in `dist/`.
 
-### Mobile Apps (iPhone and Android)
+### Linux note for Windows users
 
-Orinex includes a dedicated mobile client in `mobile-web/` and can be packaged with Capacitor.
-
-```bash
-# Add native mobile projects (run once)
-npm run mobile:add:android
-npm run mobile:add:ios
-
-# Preload local Python runtime assets (Pyodide)
-npm run mobile:preload:python
-
-# Sync web code into native shells
-# (this command also runs mobile:preload:python automatically)
-npm run mobile:sync
-
-# Open Android Studio project
-npm run mobile:open:android
-
-# Open Xcode project (run on macOS)
-npm run mobile:open:ios
-```
-
-Notes:
-- iOS build/signing requires macOS + Xcode.
-- Mobile supports broad editing language modes via Monaco.
-- Python execution is supported on mobile via the built-in Pyodide runtime (Run Py).
-- Pyodide runtime files are bundled locally into the app package for both iPhone and Android.
-- No first-run internet connection is required to initialize Python runtime on mobile.
-- Local execution of every non-Python language is not possible on mobile sandbox by default; use desktop runtime or remote/cloud runners for full execution workflows.
+- AppImage packaging requires Linux tooling (`mksquashfs`).
+- On plain Windows, use `npm run build:linux:x64:portable` for uploadable Linux `.tar.gz`.
+- For AppImage, `.deb`, and `.rpm`, use GitHub Actions or a Linux host.
 
 ---
 
-## 🔑 Setting Up AI Providers
+## ☁️ Build For Upload (Recommended)
 
-1. Open Orinex
-2. Click the provider selector in the AI panel (top right)
-3. Enter your API key for the provider you want to use
+This repository includes CI workflow: `.github/workflows/build-desktop.yml`.
 
-| Provider | Get API Key |
-|----------|------------|
-| Claude (Anthropic) | [console.anthropic.com](https://console.anthropic.com) |
-| OpenAI (GPT-4) | [platform.openai.com](https://platform.openai.com) |
-| Google Gemini | [aistudio.google.com](https://aistudio.google.com) |
-| Mistral | [console.mistral.ai](https://console.mistral.ai) |
-| Groq | [console.groq.com](https://console.groq.com) |
+1. Push your code to GitHub.
+2. Open the Actions tab.
+3. Run Build Desktop Artifacts (manual) or push a tag like `v1.0.1`.
+4. Download artifacts: `orinex-windows-x64` and `orinex-linux-x64`.
+5. Upload artifacts to your GitHub Release.
 
-Your API keys are stored **locally on your machine** using encrypted storage. They are never sent to anyone except the AI provider you choose.
+---
+
+## 📲 Mobile Apps (iPhone + Android)
+
+Orinex includes a dedicated mobile client in `mobile-web/` and packages via Capacitor.
+
+```bash
+# Add native projects (one-time)
+npm run mobile:add:android
+npm run mobile:add:ios
+
+# Bundle local editor runtime assets (Monaco)
+npm run mobile:preload:editor
+
+# Bundle local Python runtime assets (Pyodide)
+npm run mobile:preload:python
+
+# Sync web code into native projects
+# (also runs mobile:preload:editor and mobile:preload:python automatically)
+npm run mobile:sync
+
+# Open native IDE projects
+npm run mobile:open:android
+npm run mobile:open:ios
+```
+
+### Mobile notes
+
+- 🍎 iOS signing/build requires macOS + Xcode.
+- 🌍 Monaco provides broad language editing support and is bundled locally.
+- 🐍 Python runs in mobile app with built-in Pyodide (Run Py).
+- 📦 Monaco and Pyodide runtimes are bundled locally for both iPhone and Android.
+- 🚫 Full native execution for every non-Python language is not possible in mobile sandbox by default; use desktop or remote runners.
+
+---
+
+## 🔑 AI Provider Setup
+
+1. Open Orinex.
+2. Choose provider in the AI panel.
+3. Enter your API key.
+
+| Provider | API key portal |
+|----------|----------------|
+| Claude (Anthropic) | [console.anthropic.com/settings/keys](https://console.anthropic.com/settings/keys) |
+| OpenAI | [platform.openai.com/api-keys](https://platform.openai.com/api-keys) |
+| Gemini | [aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey) |
+| Mistral | [console.mistral.ai/api-keys](https://console.mistral.ai/api-keys/) |
+| Groq | [console.groq.com/keys](https://console.groq.com/keys) |
+| Cohere | [dashboard.cohere.com/api-keys](https://dashboard.cohere.com/api-keys) |
+| Together | [api.together.xyz/settings/api-keys](https://api.together.xyz/settings/api-keys) |
+| GitHub Models (Pro/Student) | [github.com/settings/tokens](https://github.com/settings/tokens) |
+| Ollama (local) | [ollama.com](https://ollama.com) |
+
+🔐 API keys are stored locally and only sent to the provider you select.
+
+For GitHub Models, use a GitHub token with access to GitHub Models APIs.
+
+### GitHub OAuth sign-in (recommended)
+
+Orinex supports Device Flow OAuth sign-in for GitHub Models, so users can connect with a button instead of manually pasting token values.
+
+1. Create a GitHub OAuth App and copy the Client ID.
+2. In Orinex AI settings, select GitHub Models.
+3. Paste your GitHub OAuth Client ID.
+4. Click Sign in with GitHub and complete the browser verification code prompt.
+5. Orinex stores the returned token locally and uses it for GitHub Models requests.
+
+GitHub Models docs (latest):
+- [Experimenting with AI models using the API](https://docs.github.com/en/github-models/use-github-models/prototyping-with-ai-models#experimenting-with-ai-models-using-the-api)
 
 ---
 
@@ -160,10 +217,10 @@ Your API keys are stored **locally on your machine** using encrypted storage. Th
 | `Ctrl/Cmd + O` | Open file |
 | `Ctrl/Cmd + N` | New file |
 | `Ctrl/Cmd + K` | Ask AI |
-| `Ctrl/Cmd + ,` | Settings |
+| `Ctrl/Cmd + ,` | Open settings |
 | `Ctrl/Cmd + B` | Toggle sidebar |
 | `Ctrl/Cmd + Shift + A` | Toggle AI panel |
-| `Ctrl + `` ` | Toggle terminal |
+| `Ctrl + Backtick` | Toggle terminal |
 | `Ctrl/Cmd + F` | Find |
 | `F11` | Fullscreen |
 
@@ -171,76 +228,80 @@ Your API keys are stored **locally on your machine** using encrypted storage. Th
 
 ## 🎨 Themes
 
-- **Dark** (default) — VS Code dark
-- **Light** — Clean white
-- **Monokai** — Classic Monokai
-- **Dracula** — Purple dark
-- **Nord** — Arctic cool
-- **Solarized** — Solarized dark
-- **Custom** — Build your own with color pickers
+- 🌑 Dark (default)
+- ☀️ Light
+- 🟡 Monokai
+- 🧛 Dracula
+- ❄️ Nord
+- 🌅 Solarized
+- 🛠️ Custom theme builder
 
 ---
 
-## 📁 Project Structure
+## 🧱 Project Structure
 
-```
+```text
 Orinex/
 ├── src/
-│   ├── main.js          # Electron main process
-│   ├── preload.js       # Secure IPC bridge
-│   ├── editor.html      # Main editor UI
-│   └── splash.html      # Legacy splash template (startup splash removed)
+│   ├── main.js
+│   ├── preload.js
+│   ├── editor.html
+│   └── hardware.js
 ├── mobile-web/
-│   ├── index.html       # Mobile editor entry (Monaco)
-│   ├── app.js           # Mobile logic
-│   ├── styles.css       # Mobile styles
+│   ├── index.html
+│   ├── app.js
+│   ├── styles.css
+│   ├── vendor/
+│   │   └── pyodide/
 │   └── manifest.webmanifest
+├── scripts/
+│   └── preload-pyodide.js
 ├── assets/
-│   ├── icon.png         # Linux icon
-│   ├── icon.ico         # Windows icon
-│   ├── icon.icns        # macOS icon
-│   └── orinex-logo.svg  # Orinex logo
+│   ├── icon.png
+│   ├── icon.ico
+│   ├── icon.icns
+│   └── orinex-logo.svg
 ├── capacitor.config.json
-├── package.json         # App config & build settings
-├── README.md
-└── LICENSE
+├── package.json
+└── README.md
 ```
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please:
+Contributions are welcome.
 
-1. Fork the repo
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add amazing feature'`
-4. Push to the branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
+1. Fork the repository.
+2. Create your branch: `git checkout -b feature/amazing-feature`
+3. Commit changes: `git commit -m "Add amazing feature"`
+4. Push branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request.
 
-Ideas for contributions:
-- Syntax highlighting with CodeMirror or Monaco Editor
-- Git integration
-- Extension/plugin system
-- More AI providers
-- Mobile app version
-- Cloud sync
+Ideas:
+
+- 🧩 Plugin/extension system
+- 🌿 Advanced Git workflows
+- ☁️ Cloud sync
+- 🧪 Better testing and diagnostics
+- 📱 More mobile-first UX improvements
 
 ---
 
 ## 📄 License
 
-MIT License — see [LICENSE](LICENSE) file.
+MIT License. See [LICENSE](LICENSE).
 
 ---
 
 ## 👨‍💻 Author
 
 **Manohar Padul**
-- Website: [manoharpadul.com](https://manoharpadul.com)
-- LinkedIn: [linkedin.com/in/manoharpadul](https://linkedin.com/in/manoharpadul-143395182)
-- GitHub: [github.com/manoharpadul](https://github.com/manoharpadul)
+
+- 🌐 Website: [manoharpadul.com](https://manoharpadul.com)
+- 💼 LinkedIn: [linkedin.com/in/manoharpadul](https://linkedin.com/in/manoharpadul-143395182)
+- 🐙 GitHub: [github.com/manoharpadul](https://github.com/manoharpadul)
 
 ---
 
-*If you find this useful, please ⭐ star the repository!*
+If Orinex helps you, consider giving the repo a ⭐.
