@@ -1,427 +1,226 @@
+<div align="center">
+
 # ⚡ Orinex
 
-> A modern AI-powered code editor for desktop and mobile, built for speed, privacy, and real-world workflows.
+### AI-Powered Code Editor — Built for Real Developers
 
-![Version](https://img.shields.io/badge/version-1.0.0-0ea5e9?style=for-the-badge)
-![License](https://img.shields.io/badge/license-MIT-22c55e?style=for-the-badge)
-![Platforms](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux%20%7C%20iOS%20%7C%20Android-1d4ed8?style=for-the-badge)
-![Electron](https://img.shields.io/badge/Electron-41-47848F?style=for-the-badge&logo=electron)
+[![Version](https://img.shields.io/badge/version-1.0.0-0ea5e9?style=for-the-badge)](https://github.com/ManoharPadul/Orinex/releases)
+[![License](https://img.shields.io/badge/license-MIT-22c55e?style=for-the-badge)](LICENSE)
+[![Electron](https://img.shields.io/badge/Electron-41-47848F?style=for-the-badge&logo=electron)](https://electronjs.org)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-1d4ed8?style=for-the-badge)](#-downloads)
+
+**[⬇️ Download](#-downloads) · [✨ Features](#-features) · [🎨 Themes](#-themes) · [🔑 AI Setup](#-ai-provider-setup)**
 
 Built by [Manohar Padul](https://manoharpadul.com)
 
-Orinex is an open source project, crafted with support from multiple AI assistants.
+</div>
 
 ---
 
-## 🌟 Why Orinex?
+## 🌟 What is Orinex?
 
-- ⚡ **Fast, focused coding experience** with desktop power and mobile reach
-- 🤖 **Multiple AI providers in one editor** with local key storage
-- 🧩 **Modern workflow features** like session restore, tab restore, and resizable panels
-- 🐍 **Python on mobile** with offline-ready runtime bundling
+Orinex is a modern, AI-powered desktop code editor built with Electron. It combines the power of multiple AI providers with a full-featured coding environment — giving you a VS Code-style editor with a built-in AI assistant, memory engine, and developer identity system all in one app.
 
 ---
 
-## ✨ Feature Highlights
+## ✨ Features
 
-- 🤖 **Multi-AI support**
-	Claude, OpenAI, Gemini, Mistral, Groq, Cohere, Together, and Ollama (local LLM).
+### 🤖 AI Integration
+- **9 AI Providers** — Claude, OpenAI, Gemini, Mistral, Groq, Cohere, Together, GitHub Models, Ollama (local LLM)
+- **AI Chat Panel** — chat with AI about your code in a dedicated panel
+- **Inline AI** — select any code, get instant fix, explain, or refactor suggestions
+- **AI Autocomplete** — Copilot-style suggestions as you type
+- **AI Code Review on Save** — automatic code review with score, issues, and suggestions every time you save
+- **Chat with Codebase** — ask AI questions about your entire project
+- **Smart AI Failover** — when one provider hits quota, automatically switches to the next configured provider
+- **AI Chat History** — full conversation history per file, grouped by date with slide-in drawer
+- **One-click AI Self-Test** — validate provider routing, model availability, and connectivity
 
-- 🧭 **Idea-to-app build planner**
-	Turn a product idea into a practical build plan with install checklists, platform strategy, architecture support matrix (arm64/x64/x86), packaging outputs, and CI guidance.
+### 🧠 Memory & Identity Engine
+- **Living Developer Profile** — Orinex learns who you are: name, languages, frameworks, projects, goals
+- **Smart Context Injection** — injects only relevant profile data per AI question (code questions get code context, career questions get goals context)
+- **Passive Learning** — silently tracks what languages you use, how long you code, what errors you hit
+- **Memory Inspector** — view and edit every memory field with full diff and version history
+- **Memory Compression** — auto-compresses profile when it gets too large, keeps it lean
+- **Undo Memory Changes** — full history with restore to any previous state
+- **AI Memory Insights** — weekly AI-generated summary of your coding activity and progress
+- **Memory Export** — export your profile as JSON or Markdown
+- **Cloud Backup** — encrypted backup to GitHub Gist, restore on any machine
+- **Onboarding Flow** — friendly 5-step setup on first launch to build your profile
 
-- 🔄 **Smart AI provider continuity**
-	When a provider hits quota/rate limits, Orinex can switch to another configured provider and continue the same request.
+### 🖥️ Editor
+- **Monaco Editor** — the same engine that powers VS Code
+- **Split Editor** — two panes side by side with independent files, cursors, and scrolls
+- **Find & Replace** — in-file search with match highlighting, case sensitive, regex support
+- **Project-Wide Search** — search across all files in your workspace (Ctrl+Shift+F)
+- **Bracket Matching & Auto-close** — auto-insert closing brackets, wrap selections, highlight matching pairs
+- **Word Wrap Toggle** — Alt+Z toggles line wrapping
+- **Auto Save** — configurable auto save with 10s / 30s / 1min / 2min intervals
+- **Line Number Breakpoints** — click line numbers to set visual breakpoints
+- **Gutter Markers** — colored dots for breakpoints and code review issues
+- **Minimap** — interactive minimap with click-to-scroll and viewport highlight
+- **Code Folding, Indentation, Multi-cursor** — full VS Code-style editing
 
-- 💾 **Persistent AI preferences**
-	Save provider and model choices (including Ollama/GitHub models) and keep them after restart.
+### 🗂️ File Management
+- **File Tree Sidebar** — full project explorer with expand/collapse folders
+- **Right-click Context Menu** — New File, New Folder, Rename, Delete, Open
+- **Drag & Drop** — drag files from OS into editor to open them
+- **Smart Tab Bar** — unsaved dot indicators, right-click tab menu, middle-click to close, overflow dropdown
+- **Native File Watcher** — detects external file changes and prompts Reload / Keep / Diff
+- **Multi-tab** — open many files simultaneously
 
-- 🧪 **One-click AI self-test**
-	Run an in-app pass/fail validation for provider routing, model availability, connectivity, and prompt round-trip checks (optimized for Ollama/local workflows).
+### 🎛️ Productivity
+- **Command Palette** — Ctrl+K / Cmd+K opens fuzzy-search command palette with all actions
+- **Focus Mode** — F11 hides everything and centers the editor for distraction-free coding
+- **Typewriter Mode** — current line stays vertically centered as you type
+- **Snippet Library** — save and insert reusable code snippets with search, tags, and language filter
+- **Advanced Pomodoro Timer** — fully customizable timer in status bar with work/break cycles, custom presets (Deep Work, Quick Sprint, Study Block, Gym Rest, and more)
+- **System Tray** — app runs in system tray, hides to tray on close
+- **Global Hotkey** — Ctrl+Shift+Space opens a mini AI input from anywhere on your system
+- **Multi-Window** — open multiple independent Orinex windows
+- **Live Collaboration Cursors** — see other users' cursors when Cloud Sync is active
 
-- 🖥️ **Desktop apps for all major platforms**
-	Native packaging for Windows, macOS, and Linux.
+### 💻 Terminal
+- **Integrated Terminal** — full terminal inside the editor
+- **Multiple Terminal Tabs** — open up to 8 terminals, switch between them instantly
+- **Split Terminal** — two terminals side by side
+- **Terminal Toolbar** — New, Split, Clear, Kill buttons
 
-- 🪟 **Window chrome customization**
-	Switch between native OS window chrome and custom Orinex window style presets.
+### 🔒 Security
+- **Masked API Keys** — all tokens and API keys hidden as •••••• with eye toggle to reveal
+- **Copy Protection** — right-click and Ctrl+C disabled on sensitive fields
+- **Auto-Lock on Idle** — automatically locks screen after configurable idle timeout (1/5/10 min)
+- **Screen Lock Button** — 🔒 button or Ctrl+L / Cmd+L instantly locks the app
+- **Full-screen Lock Overlay** — dark overlay requiring click to unlock
 
-- 📱 **iPhone and Android support**
-	Dedicated mobile client powered by Capacitor and Monaco.
+### ☁️ Cloud & Sync
+- **Cloud Sync** — Push/Pull settings, themes, AI preferences, and session state via GitHub Gist
+- **Git Integration** — built-in Git status, diff, commit, push, pull inside the editor
+- **Auto Updater** — checks GitHub Releases for updates, shows banner in status bar
+- **Multi-Machine Sync** — same profile and settings across all your machines
 
-- 🐍 **Python execution on mobile**
-	Run Python directly in-app via Pyodide.
+### 🎨 Appearance
+- **17 Built-in Themes** — Dark, Light, Monokai, Dracula, Nord, Solarized Dark, Catppuccin (Mocha/Frappe/Latte), Tokyo Night, Ayu Dark, Dainty, GitHub Dark, Atom One Dark, Houston, Night Owl, Matcha
+- **Custom Theme Builder** — create your own theme with CSS variable editor
+- **Font Customization** — Monaspace (Neon/Krypton/Argon/Xenon/Radon), Cascadia Code, Fira Code, JetBrains Mono, and more
+- **Window Style** — switch between native OS titlebar and custom Orinex titlebar
+- **Smooth Theme Transitions** — 200ms animated theme switching
 
-- 📦 **Offline Python runtime on mobile**
-	Pyodide runtime is bundled locally, so first run does not require internet.
+### 📱 Mobile (iOS & Android)
+- **Mobile Client** — dedicated mobile editor via Capacitor and Monaco
+- **Python on Mobile** — run Python directly in-app via Pyodide
+- **Offline Python** — Pyodide bundled locally, no internet needed for first run
 
-- 🧠 **Session continuity**
-	Restore last project, open tabs, and active file.
-
-- 🧩 **Extensions and cloud sync**
-	Built-in extension loading and GitHub-backed cloud sync for settings/session snapshots.
-
-- 🗂️ **Project language auto-detection**
-	Detects the dominant project language on folder open; unsupported extensions are clearly marked as support-coming-soon.
-
-- 🧰 **Productivity-first editor UX**
-	Real-time panel resizing, integrated terminal, themes, and VS Code-style shortcuts.
-
----
-
-## 🗂️ Supported File Types
-
-- 🧾 **Text, code, and data files open directly in editor**
-	`txt`, `md`, `json`, `yaml`, `yml`, `xml`, `csv`, `sql`, `py`, `js`, `ts`, `tsx`, `jsx`, `php`, `html`, `css`, `java`, `c`, `cpp`, `go`, `rs`, `sh`, `bash`, `r`, `swift`, `kt`, `env`, `toml`.
-
-- 🖼️ **Image preview in-app**
-	`jpg`, `jpeg`, `png`, `gif`, `webp`, `bmp`, `svg`.
-
-- 📄 **PDF preview in-app**
-	`pdf`.
-
-- 📘 **Document preview in-app (with external-open fallback)**
-	`docx`, `odt`, `pages` render live preview in Orinex when extractable; `doc` uses best-effort text extraction.
-
-- 📦 **Archive extraction in-app**
-	`zip`, `rar`, `7z` via right-click **Extract Archive** or preview panel **Extract Archive** button.
-
-Notes:
-- CSV files are treated as editable plain text files.
-- Document preview may differ from original formatting; use **Open Externally** for full-fidelity layout.
-- Archive extraction uses bundled `7zip-bin` runtime.
-
----
-
-## 🆕 Recent Upgrades
-
-- 🎨 Rebranded from DevAI to **Orinex** with new logo and app icons.
-- 🚀 Removed startup loading splash for faster launch.
-- 🏠 Added startup homepage with resume session support.
-- ♻️ Added session restore for project, tabs, and active file.
-- ↔️ Added real-time resizable sidebar, terminal, and AI panel.
-- 🧪 Improved terminal flow with cleaner prompt/output continuity.
-- 🔐 Added connection-gated AI panel visibility and provider checks.
-- 📲 Added mobile editor runtime for iPhone and Android.
-- 🐍 Added mobile Python execution using Pyodide.
-- 📦 Added local Pyodide preloading for offline Python startup.
-- 💾 Added explicit Save AI Preferences button for provider/model persistence.
-- 🔁 Added API quota/rate-limit failover flow with continue-on-switch behavior.
-- 🪟 Added native window chrome toggle (native/custom titlebar mode).
-- 🧠 Added Node.js and React (JSX) language support in editor/run flows.
-- 🔎 Added project-level language detection with unsupported-language notice.
-- 🗂️ Added broad file-type support including CSV/XML/SQL text workflows.
-- 📘 Added live document preview extraction for DOCX/ODT/PAGES with DOC best-effort text preview.
-- 📦 Added in-app archive extraction for ZIP/RAR/7Z.
-- 🧭 Added AI Idea-to-App planner (quick action + command palette + menu).
-- 🧩 Added extension manager and command execution hooks.
-- ☁️ Added GitHub-based cloud sync (push/pull).
-- 🧭 Added runtime GitHub model discovery from your account token instead of static-only model lists.
-- 🛟 Added unknown GitHub model auto-recovery (refresh catalog + retry with valid fallback model).
-- 🔐 Added GitHub OAuth Client ID validation (prevents callback-URL/client-ID mixups).
-- 🧪 Added one-click AI self-test button with in-app/terminal pass-fail report output.
-- 🔄 Added in-app update checker in About (shows current version, latest release, and changelog preview/copy).
-- 🐍 Added Python runtime auto-detection for Run Code (supports python3/python/py -3) to avoid macOS ENOENT errors.
-- 🩺 Added About-page Python diagnostics button to show detected runtime and platform context.
-- 🧾 Added About-page update UX improvements: last-checked timestamp, release asset quick-links, and skip-version action.
-- ⬇️ Added packaged-app updater flow with check/download/install + progress reporting.
-- 🧪 Added release-channel control (stable/beta) and persisted skipped-version update preference.
-
-Detailed release history: see [CHANGELOG.md](CHANGELOG.md).
+### 🧩 Extensibility
+- **Plugin/Extension System** — built-in extension manager and command execution hooks
+- **Idea-to-App Planner** — turn a product idea into a full build plan with architecture and packaging guidance
+- **Project Language Auto-detection** — detects dominant language on folder open
 
 ---
 
 ## 📥 Downloads
 
-### Pre-built binaries
-
 | Platform | File | Architecture |
-|----------|------|-------------|
+|---|---|---|
 | Windows | `Orinex-1.0.0-Windows-x64.exe` | x64 |
-| Windows (portable) | `Orinex-1.0.0-Windows-x64.exe` | x64 |
 | macOS | `Orinex-1.0.0-macOS-universal.dmg` | Intel + Apple Silicon |
+| Linux (AppImage) | `Orinex-1.0.0-Linux-x64.AppImage` | x64 |
 | Linux (portable) | `Orinex-1.0.0-Linux-x64.tar.gz` | x64 |
-| Linux | `Orinex-1.0.0-Linux-x64.AppImage` | x64 |
-| Linux | `Orinex-1.0.0-Linux-x64.deb` | x64 |
-| Linux | `Orinex-1.0.0-Linux-x64.rpm` | x64 |
+| Linux (deb) | `Orinex-1.0.0-Linux-x64.deb` | x64 |
 
-➡️ Download from [GitHub Releases](https://github.com/ManoharPadul/Orinex/releases).
-
----
-
-## 🚀 Quick Start (From Source)
-
-### Requirements
-
-- [Node.js](https://nodejs.org/) v18+
-- npm v9+
-- Git
-
-### Run locally
-
-```bash
-git clone https://github.com/ManoharPadul/Orinex.git
-cd Orinex
-npm install
-npm start
-```
-
----
-
-## 🏗️ Build Desktop Apps
-
-```bash
-# Windows x64 (local Windows build)
-npm run build:win:x64
-
-# Linux x64 (best on Linux or CI)
-npm run build:linux:x64
-
-# Linux portable artifact from Windows
-npm run build:linux:x64:portable
-
-# Build all desktop targets
-npm run build:all
-```
-
-Built files are generated in `dist/`.
-
-### Linux note for Windows users
-
-- AppImage packaging requires Linux tooling (`mksquashfs`).
-- On plain Windows, use `npm run build:linux:x64:portable` for uploadable Linux `.tar.gz`.
-- For AppImage, `.deb`, and `.rpm`, use GitHub Actions or a Linux host.
-
----
-
-## ☁️ Build For Upload (Recommended)
-
-This repository includes CI workflow: `.github/workflows/build-desktop.yml`.
-
-1. Push your code to GitHub.
-2. Open the Actions tab.
-3. Run Build Desktop Artifacts (manual) or push a tag like `v1.0.1`.
-4. Download artifacts: `orinex-windows-x64` and `orinex-linux-x64`.
-5. Upload artifacts to your GitHub Release.
-
-## 🔄 App Updates Across Systems
-
-When you publish a new GitHub Release, all desktop users (Windows/macOS/Linux) can check and update using the same flow:
-
-1. Open **Settings → About**.
-2. Click **Check for Updates**.
-3. Review latest version and changelog.
-4. Click **Open Latest Release** to download your platform build.
-5. Optional: click **Skip This Version** to mute repeat prompts for the same latest version.
-
-For troubleshooting local runtime issues:
-
-1. Open **Settings → About**.
-2. Click **Python Diagnostics**.
-3. Verify detected command (`python3`, `python`, or `py -3`).
-
-If Python is not detected, install Python 3 and/or set `ORINEX_PYTHON_BIN`.
-
-Notes:
-- Orinex currently uses GitHub Releases as the cross-platform update source.
-- Keep release tags aligned with `package.json` version (for example `v1.0.1`) so version checks are accurate.
-- Changelog text shown in app comes from the release notes body on GitHub.
-
----
-
-## 📲 Mobile Apps (iPhone + Android)
-
-Orinex includes a dedicated mobile client in `mobile-web/` and packages via Capacitor.
-
-```bash
-# Add native projects (one-time)
-npm run mobile:add:android
-npm run mobile:add:ios
-
-# Bundle local editor runtime assets (Monaco)
-npm run mobile:preload:editor
-
-# Bundle local Python runtime assets (Pyodide)
-npm run mobile:preload:python
-
-# Sync web code into native projects
-# (also runs mobile:preload:editor and mobile:preload:python automatically)
-npm run mobile:sync
-
-# Open native IDE projects
-npm run mobile:open:android
-npm run mobile:open:ios
-```
-
-### Mobile notes
-
-- 🍎 iOS signing/build requires macOS + Xcode.
-- 🌍 Monaco provides broad language editing support and is bundled locally.
-- 🐍 Python runs in mobile app with built-in Pyodide (Run Py).
-- 📦 Monaco and Pyodide runtimes are bundled locally for both iPhone and Android.
-- 🚫 Full native execution for every non-Python language is not possible in mobile sandbox by default; use desktop or remote runners.
+➡️ **[Download from GitHub Releases](https://github.com/ManoharPadul/Orinex/releases)**
 
 ---
 
 ## 🔑 AI Provider Setup
 
-1. Open Orinex.
-2. Choose provider in the AI panel.
-3. Enter your API key.
-4. Click **Save AI Preferences** to persist provider + model selection.
+1. Open Orinex
+2. Choose your AI provider in the AI panel
+3. Enter your API key
+4. Click **Save AI Preferences**
 
-| Provider | API key portal |
-|----------|----------------|
-| Claude (Anthropic) | [console.anthropic.com/settings/keys](https://console.anthropic.com/settings/keys) |
-| OpenAI | [platform.openai.com/api-keys](https://platform.openai.com/api-keys) |
-| Gemini | [aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey) |
-| Mistral | [console.mistral.ai/api-keys](https://console.mistral.ai/api-keys/) |
-| Groq | [console.groq.com/keys](https://console.groq.com/keys) |
-| Cohere | [dashboard.cohere.com/api-keys](https://dashboard.cohere.com/api-keys) |
-| Together | [api.together.xyz/settings/api-keys](https://api.together.xyz/settings/api-keys) |
-| GitHub Models (Pro/Student) | [github.com/settings/tokens](https://github.com/settings/tokens) |
+| Provider | Get API Key |
+|---|---|
+| Claude (Anthropic) | [console.anthropic.com](https://console.anthropic.com/settings/keys) |
+| OpenAI | [platform.openai.com](https://platform.openai.com/api-keys) |
+| Gemini | [aistudio.google.com](https://aistudio.google.com/app/apikey) |
+| Mistral | [console.mistral.ai](https://console.mistral.ai/api-keys/) |
+| Groq | [console.groq.com](https://console.groq.com/keys) |
+| Cohere | [dashboard.cohere.com](https://dashboard.cohere.com/api-keys) |
+| Together | [api.together.xyz](https://api.together.xyz/settings/api-keys) |
+| GitHub Models | [github.com/settings/tokens](https://github.com/settings/tokens) |
 | Ollama (local) | [ollama.com](https://ollama.com) |
 
-🔐 API keys are stored locally and only sent to the provider you select.
-
-For GitHub Models, use a GitHub token with access to GitHub Models APIs.
-
-### GitHub Models model selection behavior
-
-- Orinex fetches available GitHub Models dynamically from your authenticated account.
-- If a previously selected model is no longer available, Orinex refreshes the catalog and retries with a valid fallback model.
-- Static model entries are used only as fallback defaults when live discovery is unavailable.
-
-### GitHub OAuth sign-in (recommended)
-
-Orinex supports Device Flow OAuth sign-in for GitHub Models, so users can connect with a button instead of manually pasting token values.
-
-1. Create a GitHub OAuth App and copy the Client ID.
-2. In Orinex AI settings, select GitHub Models.
-3. Paste your GitHub OAuth Client ID.
-4. Click Sign in with GitHub and complete the browser verification code prompt.
-5. Orinex stores the returned token locally and uses it for GitHub Models requests.
-
-Important:
-- In Orinex, enter only the OAuth Client ID (`Iv1...`) in the GitHub OAuth field.
-- Do not paste callback URL into the Client ID field.
-
-### AI self-test (recommended for local LLM users)
-
-Use **Run AI Self-Test** from AI settings to automatically validate:
-
-1. Provider switch to Ollama
-2. Local model list discovery
-3. Active model selection
-4. Connectivity probe
-5. Prompt round-trip probe
-
-The test prints a pass/fail report in both AI chat output and terminal logs.
-
-### When API quota is full
-
-If your current provider reaches quota/rate limits, Orinex shows a prompt so you can switch to another configured provider and continue the same request without starting over.
-
-GitHub Models docs (latest):
-- [Experimenting with AI models using the API](https://docs.github.com/en/github-models/use-github-models/prototyping-with-ai-models#experimenting-with-ai-models-using-the-api)
+🔐 API keys are stored locally on your machine only.
 
 ---
 
 ## ⌨️ Keyboard Shortcuts
 
 | Shortcut | Action |
-|----------|--------|
+|---|---|
 | `Ctrl/Cmd + S` | Save file |
-| `Ctrl/Cmd + Shift + S` | Save As |
-| `Ctrl/Cmd + O` | Open file |
+| `Ctrl/Cmd + K` | Command Palette |
+| `Ctrl/Cmd + F` | Find in file |
+| `Ctrl/Cmd + H` | Find & Replace |
+| `Ctrl/Cmd + Shift + F` | Search in all files |
+| `Ctrl/Cmd + \` | Split Editor |
+| `Ctrl/Cmd + Shift + S` | Toggle Snippet Library |
+| `Ctrl/Cmd + L` | Lock screen |
 | `Ctrl/Cmd + N` | New file |
-| `Ctrl/Cmd + K` | Ask AI |
-| `Ctrl/Cmd + ,` | Open settings |
+| `Ctrl/Cmd + O` | Open file |
 | `Ctrl/Cmd + B` | Toggle sidebar |
 | `Ctrl/Cmd + Shift + A` | Toggle AI panel |
 | `Ctrl + Backtick` | Toggle terminal |
-| `Ctrl/Cmd + F` | Find |
-| `F11` | Fullscreen |
+| `Ctrl/Cmd + ,` | Open settings |
+| `F11` | Focus Mode |
+| `Alt + Z` | Toggle word wrap |
+| `Ctrl/Cmd + Shift + Space` | Global AI quick input |
 
 ---
 
 ## 🎨 Themes
 
-- 🌑 Dark (default)
-- ☀️ Light
-- 🟡 Monokai
-- 🧛 Dracula
-- ❄️ Nord
-- 🌅 Solarized
-- 🧁 Catppuccin (Mocha, Frappe, Latte)
-- 🌃 Tokyo Night
-- 🌈 Ayu Dark
-- ✨ Dainty
-- 🐙 GitHub Dark
-- ⚛️ Atom One Dark
-- 🚀 Houston
-- 🦉 Night Owl
-- 🍵 Matcha
-- 🛠️ Custom theme builder
-
-### 🖋️ Font Customization
-
-- Monaspace family support: Neon, Krypton, Argon, Xenon, Radon
-- Also supports Cascadia Code, Fira Code, Consolas, Monaco, JetBrains Mono, Source Code Pro
-
----
-
-## 🧱 Project Structure
-
-```text
-Orinex/
-├── src/
-│   ├── main.js
-│   ├── preload.js
-│   ├── editor.html
-│   └── hardware.js
-├── mobile-web/
-│   ├── index.html
-│   ├── app.js
-│   ├── styles.css
-│   ├── vendor/
-│   │   └── pyodide/
-│   └── manifest.webmanifest
-├── scripts/
-│   ├── preload-monaco.js
-│   └── preload-pyodide.js
-├── assets/
-│   ├── icon.png
-│   ├── icon.ico
-│   ├── icon.icns
-│   └── orinex-logo.svg
-├── capacitor.config.json
-├── package.json
-└── README.md
-```
+| Theme | Style |
+|---|---|
+| 🌑 Dark | Default dark |
+| ☀️ Light | Clean white |
+| 🟡 Monokai | Classic dark colorful |
+| 🧛 Dracula | Purple-tinted dark |
+| ❄️ Nord | Arctic blue-grey |
+| 🌅 Solarized Dark | Warm dark tones |
+| 🧁 Catppuccin Mocha | Soft dark pastel |
+| 🧁 Catppuccin Frappe | Medium contrast pastel |
+| 🧁 Catppuccin Latte | Light pastel |
+| 🌃 Tokyo Night | Deep navy city lights |
+| 🌈 Ayu Dark | Modern flat dark |
+| ✨ Dainty | Minimal elegant |
+| 🐙 GitHub Dark | GitHub's dark theme |
+| ⚛️ Atom One Dark | Atom editor classic |
+| 🚀 Houston | Astro's Houston theme |
+| 🦉 Night Owl | Night Owl by Sarah Drasner |
+| 🍵 Matcha | Green tea inspired |
+| 🛠️ Custom | Build your own |
 
 ---
 
-## 🤝 Contributing
+## 🗂️ Supported File Types
 
-Contributions are welcome.
+**Code:** `py`, `js`, `ts`, `tsx`, `jsx`, `html`, `css`, `java`, `c`, `cpp`, `go`, `rs`, `php`, `sh`, `r`, `swift`, `kt`
 
-1. Fork the repository.
-2. Create your branch: `git checkout -b feature/amazing-feature`
-3. Commit changes: `git commit -m "Add amazing feature"`
-4. Push branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request.
+**Data:** `json`, `yaml`, `yml`, `xml`, `csv`, `sql`, `toml`, `env`
 
-Ideas:
+**Docs:** `md`, `txt`, `docx`, `odt`, `pdf`
 
-- 🌿 Advanced Git workflows
-- 🧪 Better testing and diagnostics
-- 📱 More mobile-first UX improvements
+**Images:** `jpg`, `png`, `gif`, `webp`, `svg`, `bmp`
+
+**Archives:** `zip`, `rar`, `7z` (with in-app extraction)
 
 ---
 
 ## 📄 License
 
-MIT License. See [LICENSE](LICENSE).
+MIT License — see [LICENSE](LICENSE)
 
 ---
 
@@ -429,10 +228,14 @@ MIT License. See [LICENSE](LICENSE).
 
 **Manohar Padul**
 
-- 🌐 Website: [manoharpadul.com](https://manoharpadul.com)
-- 💼 LinkedIn: [linkedin.com/in/manoharpadul](https://linkedin.com/in/manoharpadul-143395182)
-- 🐙 GitHub: [github.com/manoharpadul](https://github.com/manoharpadul)
+- 🌐 [manoharpadul.com](https://manoharpadul.com)
+- 💼 [LinkedIn](https://linkedin.com/in/manoharpadul-143395182)
+- 🐙 [GitHub](https://github.com/manoharpadul)
 
 ---
 
-If Orinex helps you, consider giving the repo a ⭐.
+<div align="center">
+
+If Orinex helps you, give it a ⭐ — it helps others find it!
+
+</div>
