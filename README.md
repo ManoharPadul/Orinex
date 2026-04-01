@@ -62,6 +62,30 @@ Orinex is an open source project, crafted with support from multiple AI assistan
 
 ---
 
+## 🗂️ Supported File Types
+
+- 🧾 **Text, code, and data files open directly in editor**
+	`txt`, `md`, `json`, `yaml`, `yml`, `xml`, `csv`, `sql`, `py`, `js`, `ts`, `tsx`, `jsx`, `php`, `html`, `css`, `java`, `c`, `cpp`, `go`, `rs`, `sh`, `bash`, `r`, `swift`, `kt`, `env`, `toml`.
+
+- 🖼️ **Image preview in-app**
+	`jpg`, `jpeg`, `png`, `gif`, `webp`, `bmp`, `svg`.
+
+- 📄 **PDF preview in-app**
+	`pdf`.
+
+- 📘 **Document files (open from explorer, open externally)**
+	`doc`, `docx`, `odt`, `pages`.
+
+- 📦 **Archive extraction in-app**
+	`zip`, `rar`, `7z` via right-click **Extract Archive** or preview panel **Extract Archive** button.
+
+Notes:
+- CSV files are treated as editable plain text files.
+- Office/PAGES document rendering is delegated to system apps for now.
+- Archive extraction uses bundled `7zip-bin` runtime.
+
+---
+
 ## 🆕 Recent Upgrades
 
 - 🎨 Rebranded from DevAI to **Orinex** with new logo and app icons.
@@ -79,6 +103,8 @@ Orinex is an open source project, crafted with support from multiple AI assistan
 - 🪟 Added native window chrome toggle (native/custom titlebar mode).
 - 🧠 Added Node.js and React (JSX) language support in editor/run flows.
 - 🔎 Added project-level language detection with unsupported-language notice.
+- 🗂️ Added broad file-type support including CSV/XML/SQL text workflows.
+- 📦 Added in-app archive extraction for ZIP/RAR/7Z.
 - 🧩 Added extension manager and command execution hooks.
 - ☁️ Added GitHub-based cloud sync (push/pull).
 
