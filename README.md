@@ -27,8 +27,17 @@ Orinex is an open source project, crafted with support from multiple AI assistan
 - 🤖 **Multi-AI support**
 	Claude, OpenAI, Gemini, Mistral, Groq, Cohere, Together, and Ollama (local LLM).
 
+- 🔄 **Smart AI provider continuity**
+	When a provider hits quota/rate limits, Orinex can switch to another configured provider and continue the same request.
+
+- 💾 **Persistent AI preferences**
+	Save provider and model choices (including Ollama/GitHub models) and keep them after restart.
+
 - 🖥️ **Desktop apps for all major platforms**
 	Native packaging for Windows, macOS, and Linux.
+
+- 🪟 **Window chrome customization**
+	Switch between native OS window chrome and custom Orinex window style presets.
 
 - 📱 **iPhone and Android support**
 	Dedicated mobile client powered by Capacitor and Monaco.
@@ -41,6 +50,12 @@ Orinex is an open source project, crafted with support from multiple AI assistan
 
 - 🧠 **Session continuity**
 	Restore last project, open tabs, and active file.
+
+- 🧩 **Extensions and cloud sync**
+	Built-in extension loading and GitHub-backed cloud sync for settings/session snapshots.
+
+- 🗂️ **Project language auto-detection**
+	Detects the dominant project language on folder open; unsupported extensions are clearly marked as support-coming-soon.
 
 - 🧰 **Productivity-first editor UX**
 	Real-time panel resizing, integrated terminal, themes, and VS Code-style shortcuts.
@@ -59,6 +74,13 @@ Orinex is an open source project, crafted with support from multiple AI assistan
 - 📲 Added mobile editor runtime for iPhone and Android.
 - 🐍 Added mobile Python execution using Pyodide.
 - 📦 Added local Pyodide preloading for offline Python startup.
+- 💾 Added explicit Save AI Preferences button for provider/model persistence.
+- 🔁 Added API quota/rate-limit failover flow with continue-on-switch behavior.
+- 🪟 Added native window chrome toggle (native/custom titlebar mode).
+- 🧠 Added Node.js and React (JSX) language support in editor/run flows.
+- 🔎 Added project-level language detection with unsupported-language notice.
+- 🧩 Added extension manager and command execution hooks.
+- ☁️ Added GitHub-based cloud sync (push/pull).
 
 ---
 
@@ -176,6 +198,7 @@ npm run mobile:open:ios
 1. Open Orinex.
 2. Choose provider in the AI panel.
 3. Enter your API key.
+4. Click **Save AI Preferences** to persist provider + model selection.
 
 | Provider | API key portal |
 |----------|----------------|
@@ -202,6 +225,10 @@ Orinex supports Device Flow OAuth sign-in for GitHub Models, so users can connec
 3. Paste your GitHub OAuth Client ID.
 4. Click Sign in with GitHub and complete the browser verification code prompt.
 5. Orinex stores the returned token locally and uses it for GitHub Models requests.
+
+### When API quota is full
+
+If your current provider reaches quota/rate limits, Orinex shows a prompt so you can switch to another configured provider and continue the same request without starting over.
 
 GitHub Models docs (latest):
 - [Experimenting with AI models using the API](https://docs.github.com/en/github-models/use-github-models/prototyping-with-ai-models#experimenting-with-ai-models-using-the-api)
@@ -234,7 +261,21 @@ GitHub Models docs (latest):
 - 🧛 Dracula
 - ❄️ Nord
 - 🌅 Solarized
+- 🧁 Catppuccin (Mocha, Frappe, Latte)
+- 🌃 Tokyo Night
+- 🌈 Ayu Dark
+- ✨ Dainty
+- 🐙 GitHub Dark
+- ⚛️ Atom One Dark
+- 🚀 Houston
+- 🦉 Night Owl
+- 🍵 Matcha
 - 🛠️ Custom theme builder
+
+### 🖋️ Font Customization
+
+- Monaspace family support: Neon, Krypton, Argon, Xenon, Radon
+- Also supports Cascadia Code, Fira Code, Consolas, Monaco, JetBrains Mono, Source Code Pro
 
 ---
 
@@ -280,9 +321,7 @@ Contributions are welcome.
 
 Ideas:
 
-- 🧩 Plugin/extension system
 - 🌿 Advanced Git workflows
-- ☁️ Cloud sync
 - 🧪 Better testing and diagnostics
 - 📱 More mobile-first UX improvements
 
