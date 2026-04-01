@@ -27,11 +27,17 @@ Orinex is an open source project, crafted with support from multiple AI assistan
 - 🤖 **Multi-AI support**
 	Claude, OpenAI, Gemini, Mistral, Groq, Cohere, Together, and Ollama (local LLM).
 
+- 🧭 **Idea-to-app build planner**
+	Turn a product idea into a practical build plan with install checklists, platform strategy, architecture support matrix (arm64/x64/x86), packaging outputs, and CI guidance.
+
 - 🔄 **Smart AI provider continuity**
 	When a provider hits quota/rate limits, Orinex can switch to another configured provider and continue the same request.
 
 - 💾 **Persistent AI preferences**
 	Save provider and model choices (including Ollama/GitHub models) and keep them after restart.
+
+- 🧪 **One-click AI self-test**
+	Run an in-app pass/fail validation for provider routing, model availability, connectivity, and prompt round-trip checks (optimized for Ollama/local workflows).
 
 - 🖥️ **Desktop apps for all major platforms**
 	Native packaging for Windows, macOS, and Linux.
@@ -73,15 +79,15 @@ Orinex is an open source project, crafted with support from multiple AI assistan
 - 📄 **PDF preview in-app**
 	`pdf`.
 
-- 📘 **Document files (open from explorer, open externally)**
-	`doc`, `docx`, `odt`, `pages`.
+- 📘 **Document preview in-app (with external-open fallback)**
+	`docx`, `odt`, `pages` render live preview in Orinex when extractable; `doc` uses best-effort text extraction.
 
 - 📦 **Archive extraction in-app**
 	`zip`, `rar`, `7z` via right-click **Extract Archive** or preview panel **Extract Archive** button.
 
 Notes:
 - CSV files are treated as editable plain text files.
-- Office/PAGES document rendering is delegated to system apps for now.
+- Document preview may differ from original formatting; use **Open Externally** for full-fidelity layout.
 - Archive extraction uses bundled `7zip-bin` runtime.
 
 ---
@@ -104,9 +110,23 @@ Notes:
 - 🧠 Added Node.js and React (JSX) language support in editor/run flows.
 - 🔎 Added project-level language detection with unsupported-language notice.
 - 🗂️ Added broad file-type support including CSV/XML/SQL text workflows.
+- 📘 Added live document preview extraction for DOCX/ODT/PAGES with DOC best-effort text preview.
 - 📦 Added in-app archive extraction for ZIP/RAR/7Z.
+- 🧭 Added AI Idea-to-App planner (quick action + command palette + menu).
 - 🧩 Added extension manager and command execution hooks.
 - ☁️ Added GitHub-based cloud sync (push/pull).
+- 🧭 Added runtime GitHub model discovery from your account token instead of static-only model lists.
+- 🛟 Added unknown GitHub model auto-recovery (refresh catalog + retry with valid fallback model).
+- 🔐 Added GitHub OAuth Client ID validation (prevents callback-URL/client-ID mixups).
+- 🧪 Added one-click AI self-test button with in-app/terminal pass-fail report output.
+- 🔄 Added in-app update checker in About (shows current version, latest release, and changelog preview/copy).
+- 🐍 Added Python runtime auto-detection for Run Code (supports python3/python/py -3) to avoid macOS ENOENT errors.
+- 🩺 Added About-page Python diagnostics button to show detected runtime and platform context.
+- 🧾 Added About-page update UX improvements: last-checked timestamp, release asset quick-links, and skip-version action.
+- ⬇️ Added packaged-app updater flow with check/download/install + progress reporting.
+- 🧪 Added release-channel control (stable/beta) and persisted skipped-version update preference.
+
+Detailed release history: see [CHANGELOG.md](CHANGELOG.md).
 
 ---
 
@@ -183,6 +203,29 @@ This repository includes CI workflow: `.github/workflows/build-desktop.yml`.
 4. Download artifacts: `orinex-windows-x64` and `orinex-linux-x64`.
 5. Upload artifacts to your GitHub Release.
 
+## 🔄 App Updates Across Systems
+
+When you publish a new GitHub Release, all desktop users (Windows/macOS/Linux) can check and update using the same flow:
+
+1. Open **Settings → About**.
+2. Click **Check for Updates**.
+3. Review latest version and changelog.
+4. Click **Open Latest Release** to download your platform build.
+5. Optional: click **Skip This Version** to mute repeat prompts for the same latest version.
+
+For troubleshooting local runtime issues:
+
+1. Open **Settings → About**.
+2. Click **Python Diagnostics**.
+3. Verify detected command (`python3`, `python`, or `py -3`).
+
+If Python is not detected, install Python 3 and/or set `ORINEX_PYTHON_BIN`.
+
+Notes:
+- Orinex currently uses GitHub Releases as the cross-platform update source.
+- Keep release tags aligned with `package.json` version (for example `v1.0.1`) so version checks are accurate.
+- Changelog text shown in app comes from the release notes body on GitHub.
+
 ---
 
 ## 📲 Mobile Apps (iPhone + Android)
@@ -242,6 +285,12 @@ npm run mobile:open:ios
 
 For GitHub Models, use a GitHub token with access to GitHub Models APIs.
 
+### GitHub Models model selection behavior
+
+- Orinex fetches available GitHub Models dynamically from your authenticated account.
+- If a previously selected model is no longer available, Orinex refreshes the catalog and retries with a valid fallback model.
+- Static model entries are used only as fallback defaults when live discovery is unavailable.
+
 ### GitHub OAuth sign-in (recommended)
 
 Orinex supports Device Flow OAuth sign-in for GitHub Models, so users can connect with a button instead of manually pasting token values.
@@ -251,6 +300,22 @@ Orinex supports Device Flow OAuth sign-in for GitHub Models, so users can connec
 3. Paste your GitHub OAuth Client ID.
 4. Click Sign in with GitHub and complete the browser verification code prompt.
 5. Orinex stores the returned token locally and uses it for GitHub Models requests.
+
+Important:
+- In Orinex, enter only the OAuth Client ID (`Iv1...`) in the GitHub OAuth field.
+- Do not paste callback URL into the Client ID field.
+
+### AI self-test (recommended for local LLM users)
+
+Use **Run AI Self-Test** from AI settings to automatically validate:
+
+1. Provider switch to Ollama
+2. Local model list discovery
+3. Active model selection
+4. Connectivity probe
+5. Prompt round-trip probe
+
+The test prints a pass/fail report in both AI chat output and terminal logs.
 
 ### When API quota is full
 
@@ -322,6 +387,7 @@ Orinex/
 │   │   └── pyodide/
 │   └── manifest.webmanifest
 ├── scripts/
+│   ├── preload-monaco.js
 │   └── preload-pyodide.js
 ├── assets/
 │   ├── icon.png
