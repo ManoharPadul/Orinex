@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orinex Editor</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #1e1e1e; color: #d4d4d4; font-family: 'Segoe UI', sans-serif; height: 100vh; display: flex; flex-direction: column; }
+    #titlebar { height: 32px; background: #323233; display: flex; align-items: center; padding: 0 12px; gap: 8px; -webkit-app-region: drag; }
+    #titlebar span { font-size: 13px; color: #ccc; }
+    #tab-bar { height: 35px; background: #252526; display: flex; align-items: flex-end; overflow: hidden; border-bottom: 1px solid #1a1a1a; }
+    .tab { height: 35px; padding: 0 16px; display: flex; align-items: center; gap: 8px; background: #2d2d2d; border-right: 1px solid #1a1a1a; cursor: pointer; font-size: 13px; color: #969696; white-space: nowrap; position: relative; }
+    .tab.active { background: #1e1e1e; color: #fff; border-top: 1px solid #0ea5e9; }
+    .tab .tab-dirty { color: #e5c07b; font-size: 10px; }
+    .tab .tab-close { opacity: 0; font-size: 16px; line-height: 1; }
+    .tab:hover .tab-close { opacity: 1; }
+    #editor-container { flex: 1; position: relative; }
+    #editor { width: 100%; height: 100%; }
+    #statusbar { height: 22px; background: #007acc; display: flex; align-items: center; padding: 0 12px; gap: 16px; font-size: 12px; color: #fff; }
+    #perf-panel { position: fixed; bottom: 30px; right: 16px; background: #252526; border: 1px solid #3c3c3c; border-radius: 6px; padding: 12px 16px; font-size: 12px; min-width: 220px; display: none; z-index: 100; }
+    #perf-panel h4 { margin-bottom: 8px; color: #0ea5e9; font-size: 13px; }
+    #perf-panel .metric { display: flex; justify-content: space-between; padding: 2px 0; color: #ccc; }
+    #perf-panel .metric span:last-child { color: #9cdcfe; }
+    #perf-tab-list { margin-top: 8px; max-height: 120px; overflow-y: auto; }
+    #perf-tab-list .tab-metric { display: flex; justify-content: space-between; padding: 1px 0; font-size: 11px; color: #888; }
+  </style>
+</head>
+<body>
+
+<div id="titlebar">
+  <span>⚡ Orinex</span>
+</div>
+
+<div id="tab-bar"></div>
+
+<div id="editor-container">
+  <div id="editor"></div>
+</div>
+
+<div id="statusbar">
+  <span id="status-line-col">Ln 1, Col 1</span>
+  <span id="status-lang">Plain Text</span>
+  <span id="status-encoding">UTF-8</span>
+  <span id="status-perf" style="cursor:pointer" onclick="togglePerfPanel()">⚡ Perf</span>
+</div>
+
+<div id="perf-panel">
+  <h4>⚡ Performance Metrics</h4>
+  <div class="metric"><span>Open Tabs</span><span id="perf-tab-count">0</span></div>
+  <div class="metric"><span>Total Tab Memory</span><span id="perf-tab-memory">0 KB</span></div>
+  <div class="metric"><span>JS Heap Used</span><span id="perf-heap-used">—</span></div>
+  <div class="metric"><span>JS Heap Total</span><span id="perf-heap-total">—</span></div>
+  <div id="perf-tab-list"></div>
+</div>
+
+<script>
+  // ─── Tab storage ────────────────────────────────────────────────────────────
+  // openTabs is stored as an object keyed by tab ID, e.g.:
+  //   { 'tab-1': { id: 'tab-1', path: '/src/index.js', content: '...' }, ... }
+  let openTabs = {};
+  let activeTabId = null;
+
+  // ─── Tab management helpers ──────────────────────────────────────────────────
+
+  function addTab(id, path, content) {
+    openTabs[id] = { id, path, content: content || '' };
+    renderTabs();
+  }
+
+  function removeTab(id) {
+    delete openTabs[id];
+    if (activeTabId === id) {
+      const remaining = Object.keys(openTabs);
+      activeTabId = remaining.length ? remaining[remaining.length - 1] : null;
+    }
+    renderTabs();
+  }
+
+  function setActiveTab(id) {
+    activeTabId = id;
+    renderTabs();
+  }
+
+  function renderTabs() {
+    const bar = document.getElementById('tab-bar');
+    bar.innerHTML = '';
+    Object.values(openTabs).forEach(tab => {
+      const el = document.createElement('div');
+      el.className = 'tab' + (tab.id === activeTabId ? ' active' : '');
+      el.dataset.id = tab.id;
+
+      const nameSpan = document.createElement('span');
+      nameSpan.textContent = (tab.path || '').split('/').pop() || '(untitled)';
+
+      const closeBtn = document.createElement('span');
+      closeBtn.className = 'tab-close';
+      closeBtn.textContent = '×';
+      closeBtn.addEventListener('click', (e) => { e.stopPropagation(); removeTab(tab.id); });
+
+      el.appendChild(nameSpan);
+      el.appendChild(closeBtn);
+      el.addEventListener('click', () => setActiveTab(tab.id));
+      bar.appendChild(el);
+    });
+  }
+
+  // ─── Performance metrics ─────────────────────────────────────────────────────
+
+  /**
+   * updatePerfMetrics – refreshes the performance panel with memory usage per tab.
+   *
+   * @param {Object|Array} tabs - Tab collection. May be the global openTabs object
+   *   (keyed by tab ID) or an array of tab objects.  Both forms are handled
+   *   gracefully so this function never throws "tabs.map is not a function".
+   */
+  function updatePerfMetrics(tabs) {
+    // Convert tabs to array if it's an object (e.g. the openTabs map).
+    const tabsArray = Array.isArray(tabs)
+      ? tabs
+      : Object.values(tabs || {});
+
+    // Calculate per-tab memory estimate (content byte length).
+    const tabMemory = tabsArray.map(tab => {
+      const path = tab.path || '';
+      const size = (tab.content || '').length;
+      return { path, size };
+    });
+
+    const totalBytes = tabMemory.reduce((sum, t) => sum + t.size, 0);
+    const totalKB = (totalBytes / 1024).toFixed(2);
+
+    // Heap info (available in Chrome/Electron).
+    const mem = (typeof performance !== 'undefined' && performance.memory)
+      ? performance.memory
+      : null;
+
+    // Update DOM.
+    document.getElementById('perf-tab-count').textContent = tabsArray.length;
+    document.getElementById('perf-tab-memory').textContent = totalKB + ' KB';
+
+    if (mem) {
+      document.getElementById('perf-heap-used').textContent =
+        (mem.usedJSHeapSize / 1048576).toFixed(1) + ' MB';
+      document.getElementById('perf-heap-total').textContent =
+        (mem.totalJSHeapSize / 1048576).toFixed(1) + ' MB';
+    }
+
+    const list = document.getElementById('perf-tab-list');
+    list.innerHTML = '';
+    tabMemory.forEach(t => {
+      const name = t.path.split('/').pop() || '(untitled)';
+      const kb = (t.size / 1024).toFixed(2);
+      const row = document.createElement('div');
+      row.className = 'tab-metric';
+      const nameEl = document.createElement('span');
+      nameEl.textContent = name;
+      const sizeEl = document.createElement('span');
+      sizeEl.textContent = kb + ' KB';
+      row.appendChild(nameEl);
+      row.appendChild(sizeEl);
+      list.appendChild(row);
+    });
+  }
+
+  function togglePerfPanel() {
+    const panel = document.getElementById('perf-panel');
+    panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+    if (panel.style.display === 'block') {
+      updatePerfMetrics(openTabs);
+    }
+  }
+
+  // ─── Periodic performance refresh ───────────────────────────────────────────
+  // openTabs is an object, but updatePerfMetrics handles both object and array
+  // inputs, so this call is safe.
+  setInterval(() => {
+    const panel = document.getElementById('perf-panel');
+    if (panel && panel.style.display === 'block') {
+      updatePerfMetrics(openTabs);
+    }
+  }, 2000);
+
+  // ─── Initialise demo tabs ────────────────────────────────────────────────────
+  window.addEventListener('DOMContentLoaded', () => {
+    addTab('tab-1', '/src/index.js', 'console.log("Hello, Orinex!");\n');
+    addTab('tab-2', '/src/editor.html', '<!DOCTYPE html>\n<html>\n</html>\n');
+    setActiveTab('tab-1');
+  });
+</script>
+
+</body>
+</html>
