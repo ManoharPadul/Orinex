@@ -129,6 +129,8 @@ This release consolidates all features into a **single stable production version
 
 ---
 
+# 📸 Screenshots
+
 # 🎛️ Productivity
 
 * Command palette
