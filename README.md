@@ -16,7 +16,7 @@
 ---
 
 <p align="center">
-  <img src="/icon.png" alt="Orinex Icon" width="120"/>
+  <img src="/assets/icon.png" alt="Orinex Icon" width="120"/>
 </p>
 
 Built by **Manohar Padul**
