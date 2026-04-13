@@ -130,7 +130,7 @@ This release consolidates all features into a **single stable production version
 ---
 
 # 📸 Screenshots
-
+  <img src="Screenshot1.png"/><img src="Screenshot2.png"/><img src="Screenshot3.png"/>
 # 🎛️ Productivity
 
 * Command palette
