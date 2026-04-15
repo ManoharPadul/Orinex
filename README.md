@@ -1,8 +1,8 @@
 # ⚡ Orinex
 
-> A modern AI-powered code editor for real-world development workflows.
+> **AI-native development platform for real-world engineering workflows**
 
-> Built for speed, intelligence, and full-stack development with integrated AI.
+Fast. Intelligent. Fully integrated.
 
 ---
 
@@ -19,118 +19,124 @@
   <img src="/icon.png" alt="Orinex Icon" width="120"/>
 </p>
 
-Built by **Manohar Padul**
-https://manoharpadul.com
+<p align="center">
+  Built by <strong>Manohar Padul</strong><br/>
+  https://manoharpadul.com
+</p>
 
 ---
 
 # 🚀 Overview
 
-Orinex is an **AI-native development platform**, not just an editor.
+Orinex is not just a code editor — it’s a **complete AI-native development system** designed for real projects.
 
 ```text
-✔ Multi-provider AI system
+✔ Multi-provider AI orchestration
 ✔ Graph-based code intelligence
-✔ Persistent developer memory
-✔ Advanced developer tooling
-✔ Cross-platform desktop support
+✔ Runtime-aware development workflows
+✔ Persistent memory system
+✔ Cross-platform desktop performance
 ```
 
 ---
 
 # 🌟 Why Orinex?
 
-* ⚡ Fast, desktop-first performance
-* 🤖 Multiple AI providers in one system
-* 🧠 Context-aware intelligent workflows
-* 🧩 Built for real projects (not demos)
+* ⚡ Desktop-first performance (no browser lag)
+* 🤖 Unified AI system (no tool fragmentation)
+* 🧠 Context-aware workflows (project-level intelligence)
+* 🧩 Built for real-world scale (not demos)
 
 ---
 
-# 🆕 v1.1.0 — Major Upgrade
+# 🆕 v1.1.0 — Production Release
 
-This release consolidates all features into a **single stable production version**.
+This version consolidates Orinex into a **stable, production-ready platform**.
 
-### Core Improvements
+## Core Improvements
 
 * Unified AI routing system (`AIRouter`)
-* Function graph now uses dependency graph renderer
-* Graph clustering + performance improvements
-* Runtime Intelligence panel + safe rollback
-* Async file system operations (no UI blocking)
-* Security hardening (IPC, terminal, credentials)
+* Graph system upgraded to dependency-based renderer
+* Large-project performance improvements (1000+ nodes)
+* Runtime Intelligence panel with rollback support
+* Fully async file system (no UI blocking)
+* Hardened IPC + terminal execution security
 * Stable cross-platform build pipeline
 
 ---
 
 # 🤖 AI System
 
-### Multi-provider support
+## Multi-provider support
 
 * OpenAI, Claude, Gemini
 * Mistral, Groq, Cohere, Together
 * GitHub Models
-* Ollama (local)
+* Ollama (local AI)
 
----
+## Capabilities
 
-### Capabilities
-
-* Inline AI (fix, explain, refactor)
+* Inline AI (fix, refactor, explain)
 * AI autocomplete (Copilot-style)
-* Codebase chat (RAG)
+* Codebase chat (RAG-powered)
 * AI code review (on save)
-* Test + documentation generation
-* Smart failover between providers
-* One-click AI self-test
+* Test & documentation generation
+* Smart provider failover
+* One-click AI diagnostics
 
 ---
 
-# 🧠 Memory & Intelligence
+# 🧠 Memory & Runtime Intelligence
 
-* Persistent AI chat history
-* Context-aware memory injection
-* Runtime intelligence + upgrade system
-* Snapshot + rollback support
+* Persistent chat + context memory
+* Context-aware prompt injection
+* Runtime Intelligence panel
+* Snapshot + rollback system
 
 ---
 
 # 🧩 Graph Intelligence
 
 * Dependency Graph
-* Function Graph (unified system)
+* Function Graph (unified)
 
 ```text
-✔ Organic clustering (no spiral bugs)
-✔ Large project support (1000+ nodes)
+✔ Organic clustering (no layout instability)
+✔ Large-scale project support
 ✔ Theme-aware rendering
-✔ 2D + safe 3D fallback
+✔ 2D with safe 3D fallback
 ```
 
 ---
 
-# 🛠️ Developer Tools
+# 🛠️ Developer Tooling
 
 * Interactive diff workspace
 * Multi-file search & replace (regex)
 * Integrated debugger (DAP)
-* Git tools (log, stash, diff)
+* Git tools (log, diff, stash)
 * Package manager UI
 
 ---
 
-# 🖥️ Editor
+# 🖥️ Editor Features
 
 * Split editor
-* Multi-cursor & folding
-* Minimap
+* Multi-cursor editing
+* Code folding + minimap
 * Auto-save
 * Breakpoints
 
 ---
 
 # 📸 Screenshots
-  <img src="Screenshot1.png"/><img src="Screenshot2.png"/><img src="Screenshot3.png"/>
+
+<img src="Screenshot1.png"/>
+<img src="Screenshot2.png"/>
+<img src="Screenshot3.png"/>
+
+---
+
 # 🎛️ Productivity
 
 * Command palette
@@ -146,16 +152,16 @@ This release consolidates all features into a **single stable production version
 * API key masking
 * Encrypted storage
 * Terminal allowlist execution
-* Production hardening
+* Production-safe IPC design
 
 ---
 
 # 🎨 Appearance
 
 * 17+ themes
-* Glass + Solid UI
+* Glass + solid UI modes
 * Custom theme builder
-* Theme-aware graph rendering
+* Theme-aware graphs
 
 ---
 
@@ -169,19 +175,16 @@ This release consolidates all features into a **single stable production version
 
 ---
 
-# 📥 Downloads
+# 📥 Download
 
 👉 https://github.com/ManoharPadul/Orinex/releases
-
----
-
 
 ---
 
 # 🔑 AI Setup
 
 1. Open Orinex
-2. Select provider
+2. Select AI provider
 3. Enter API key
 4. Save
 
@@ -192,8 +195,8 @@ This release consolidates all features into a **single stable production version
 ```text
 ✔ Tests passing
 ✔ Graph system stable
-✔ Builds verified
-✔ Runtime optimized
+✔ Runtime system validated
+✔ Build pipeline verified
 ```
 
 ---
@@ -216,8 +219,8 @@ AI-native development platform
 
 # 🤝 Contributing
 
-* Fork repo
-* Create branch
+* Fork repository
+* Create feature branch
 * Submit PR
 
 ---
@@ -230,10 +233,8 @@ MIT License
 
 # ⭐ Support
 
-If this project helps you:
+If Orinex helps you:
 
-* Star the repo
-* Report issues
-* Suggest features
-
----
+* ⭐ Star the repo
+* 🐛 Report issues
+* 💡 Suggest features
